@@ -1,0 +1,43 @@
+{
+    "name": "mlambley/swagfaker",
+    "description": "Create fake data from a Swagger schema",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mark Lambley",
+            "email": "mlambley@gmail.com"
+        }
+    ],
+    "require": {
+        "fzaninotto/faker": "^1.7"
+    },
+    "require-dev": {
+        "justinrainbow/json-schema": "~5.2.7",
+        "phpmd/phpmd": "^2.4",
+        "squizlabs/php_codesniffer": "^2.6",
+        "phpunit/phpunit": "^5.4"
+    },
+    "autoload": {
+        "files": [
+            "./src/helper.php"
+        ],
+        "psr-4": {
+            "JSONSchemaFaker\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JSONSchemaFaker\\Test\\": "test/"
+        }
+    },
+    "scripts": {
+        "test": [
+            "phpunit test/ --coverage-clover=clover.xml --whitelist=src"
+        ],
+        "lint": [
+            "phpmd src,test text codesize,controversial,design,naming,unusedcode",
+            "phpcs --standard=PSR2 src test"
+        ]
+    }
+}
