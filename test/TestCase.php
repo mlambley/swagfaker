@@ -1,6 +1,6 @@
 <?php
 
-namespace JSONSchemaFaker\Test;
+namespace SwaggerFaker\Test;
 
 class TestCase extends \PHPUnit\Framework\TestCase
 {

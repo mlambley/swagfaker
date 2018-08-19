@@ -1,9 +1,9 @@
 <?php
 
-namespace JSONSchemaFaker\Test;
+namespace SwaggerFaker\Test;
 
-use JSONSchemaFaker\Faker;
-use JsonSchema\Validator;
+use SwaggerFaker\Faker;
+use Swagception\Validator\Validator;
 
 class FakerTest extends TestCase
 {
@@ -15,10 +15,14 @@ class FakerTest extends TestCase
         $schema = $this->getFixture($type);
         $validator = new Validator();
 
-        $actual = Faker::fake($schema);
-        $validator->check($actual, $schema);
-
-        $this->assertTrue($validator->isValid(), json_encode($validator->getErrors(), JSON_PRETTY_PRINT));
+        $actual = (new Faker())->generate($schema);
+        
+        try {
+            $validator->validate($schema, $actual);
+            $this->assertTrue(true);
+        } catch (\Swagception\Exception\ValidationException $e) {
+            $this->assertTrue(false, $e->getMessage() . PHP_EOL . json_encode($actual, JSON_PRETTY_PRINT));
+        }
     }
 
     public function getTypes()
@@ -40,6 +44,6 @@ class FakerTest extends TestCase
      */
     public function testFakeMustThrowExceptionIfInvalidType()
     {
-        Faker::fake((object)['type' => 'xxxxx']);
+        (new Faker())->generate((object)['type' => 'xxxxx']);
     }
 }

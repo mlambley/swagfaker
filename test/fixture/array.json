@@ -4,33 +4,36 @@
     "typeOnly",
     "typeAndMinItems",
     "typeAndMaxItems",
-    "typeAndMinItems",
-    "typeAndMultipleItems"
+    "typeAndMinMaxItems"
   ],
   "properties": {
     "typeOnly": {
-      "type": "array"
-    },
-    "typeAndMinItems": {
       "type": "array",
-      "minItems": 10
-    },
-    "typeAndMaxItems": {
-      "type": "array",
-      "maxItems": 10
+      "items": {
+        "type": "integer"
+      }
     },
     "typeAndMinItems": {
       "type": "array",
       "minItems": 10,
-      "maxItems": 10
-    },
-    "typeAndMultipleItems": {
-      "type": "array",
-      "items": [{
+      "items": {
         "type": "integer"
-      }, {
-        "type": "string"
-      }]
+      }
+    },
+    "typeAndMaxItems": {
+      "type": "array",
+      "maxItems": 10,
+      "items": {
+        "type": "integer"
+      }
+    },
+    "typeAndMinMaxItems": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {
+        "type": "integer"
+      }
     }
   }
 }

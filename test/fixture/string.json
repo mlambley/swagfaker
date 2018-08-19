@@ -7,12 +7,7 @@
     "typeAndMinLength",
     "typeAndMinLengthAndMaxLength",
     "typeAndPattern",
-    "typeAndFormat(date-time)",
-    "typeAndFormat(email)",
-    "typeAndFormat(hostname)",
-    "typeAndFormat(ipv4)",
-    "typeAndFormat(ipv6)",
-    "typeAndFormat(uri)"
+    "typeAndFormat(date-time)"
   ],
   "properties": {
     "typeOnly": {
@@ -42,26 +37,6 @@
     "typeAndFormat(date-time)": {
       "type": "string",
       "format": "date-time"
-    },
-    "typeAndFormat(email)": {
-      "type": "string",
-      "format": "email"
-    },
-    "typeAndFormat(hostname)": {
-      "type": "string",
-      "format": "hostname"
-    },
-    "typeAndFormat(ipv4)": {
-      "type": "string",
-      "format": "ipv4"
-    },
-    "typeAndFormat(ipv6)": {
-      "type": "string",
-      "format": "ipv6"
-    },
-    "typeAndFormat(uri)": {
-      "type": "string",
-      "format": "uri"
     }
   }
 }
