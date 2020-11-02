@@ -3,7 +3,7 @@ Generates fake data which will validate against your Swagger 2.0 schema.
 
 ## How to install
 ```
-composer require mlambley/swagfaker:0.0.1-alpha.1
+composer require mlambley/swagfaker:^1.0
 ```
 
 ## What is Swagger?
